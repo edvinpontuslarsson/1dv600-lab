@@ -2,22 +2,29 @@
 // API documentation - https://github.com/visionmedia/supertest
 var request = require('supertest');
 
-var app = require("../app");
-/*
-describe("Ping Resource", function () {
+var app = require("../app"); 
 
-    describe("GET /api/ping", function () {
+describe("Get Book", function () {
 
-        it("respond with pong", function (done) {
+    describe("GET /api/books", function () {
 
-            request(app)
-                .get('/api/ping')
+        it("Get status code 200 (OK) since the url is correct", function (done) {
+
+                request(app)
+                .get('/api/books')
                 .set('Accept', 'application/json')
-                .expect(200, {
-                    answer: "pong"
-                },done);
+                .expect(200, done)          
+        });
+    });
 
+    describe("GET /api/bookz", function () {
+
+        it("Get status code 404 (Not found) since the url is incorrect", function (done) {
+
+                request(app)
+                .get('/api/bookz')
+                .set('Accept', 'application/json')
+                .expect(404, done)          
         });
     });
 });
-*/
