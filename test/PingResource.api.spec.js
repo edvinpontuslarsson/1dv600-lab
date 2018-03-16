@@ -4,7 +4,7 @@ var request = require('supertest');
 
 var app = require("../app"); 
 
-describe("Get Book", function () {
+describe("List Books", function () {
 
     describe("GET /api/books", function () {
 
